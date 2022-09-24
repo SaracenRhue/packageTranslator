@@ -16,7 +16,6 @@ with open('sr/config.yml', 'r') as file:
     sr_remove = config[sr]['remove']
     sr_update = config[sr]['update']
     pkg_list = config[sr]['packages']
-    print(pkg_list)
 
 
 
