@@ -10,7 +10,7 @@ cd
 python3 sr_data/setup.py
 rm -rf sr_data/setup.py
 
-echo "alias sr='python3 sr/main.py'" >> ~/.zshrc
-echo "alias sr='python3 sr/main.py'" >> ~/.bashrc
+echo "alias sr='python3 sr_data/main.py'" >> ~/.zshrc
+echo "alias sr='python3 sr_data/main.py'" >> ~/.bashrc
 source ~/.zshrc
 source ~/.bashrc
