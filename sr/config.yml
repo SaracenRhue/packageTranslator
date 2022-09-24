@@ -11,14 +11,23 @@ apt-get:
   update: sudo apt update -y && sudo apt upgrade -y
   packages:
     python3: python3 python3-pip
+    nextcloud: nextcloud-desktop
+    firefox: firefox-esr
 
 brew:
   install: brew install
   remove: brew remove
   update: brew update && brew upgrade
   packages:
-    python3: python
-    kotlin: kotlin
+    java: openjdk
+    node: nodejs npm
+    firefox: --cask firefox
+    brave: --cask brave-browser
+    vscode: --cask visual-studio-code
+    github: --cask github
+    discord: --cask discord
+    obsidian: --cask obsidian
+
 
 dnf:
   install: sudo dnf install -y
@@ -33,6 +42,9 @@ yay:
   update: yay -Syu --noconfirm
   packages:
     python3: python3 python-pip
+    nextcloud: nextcloud-client
+    vscode: visual-studio-code-bin
+    github: github-desktop-bin
 
 pacman:
   install: sudo pacman -S --noconfirm
@@ -40,7 +52,6 @@ pacman:
   update: sudo pacman -Syu --noconfirm
   packages:
     python3: python3 python-pip
+    nextcloud: nextcloud-client
 
 
-
-system_manager: brew
