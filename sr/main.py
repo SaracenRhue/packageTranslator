@@ -16,18 +16,29 @@ with open('sr/config.yml', 'r') as file:
     sr_remove = config[sr]['remove']
     sr_update = config[sr]['update']
     pkg_list = config[sr]['packages']
+    npm = config['npm']
 
 
 
-if 'i' in task:
+if 'i' in task: # install
     for package in packages:
-        if package in pkg_list:
+        if package in pkg_list: # check if package is in the list
             package = pkg_list[package]
-        cmd(f"{sr_install} {package}")
-elif 'r' or 'un' in task:
+            cmd(f"{sr_install} {package}")
+        elif package in npm: # check if package is in the npm list
+            package = npm[package]
+            cmd(f"npm install -g {package}") 
+        else:
+            cmd(f"{sr_install} {package}")
+elif 'r' or 'un' in task: # remove
     for package in packages:
-        if package in pkg_list:
-            package = pkg_list[package]
-        cmd(f"{sr_remove} {package}")
-elif 'u' in task:
+        if package in pkg_list: # check if package is in the list
+            package = pkg_list[package] 
+            cmd(f"{sr_install} {package}")
+        elif package in npm: # check if package is in the npm list
+            package = npm[package]
+            cmd(f"npm remove {package}")
+        else:
+            cmd(f"{sr_remove} {package}")
+elif 'u' in task: # update
     cmd(sr_update)

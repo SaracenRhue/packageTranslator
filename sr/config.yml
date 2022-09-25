@@ -10,7 +10,9 @@ apt-get:
   remove: sudo apt remove -y
   update: sudo apt update -y && sudo apt upgrade -y
   packages:
-    python3: python3 python3-pip
+    python: python3 python3-pip
+    node: nodejs npm
+    java: penjdk-17-jdk
     nextcloud: nextcloud-desktop
     firefox: firefox-esr
 
@@ -34,14 +36,17 @@ dnf:
   remove: sudo dnf remove -y
   update: sudo dnf update -y && sudo dnf upgrade -y
   packages:
-    python3: python3 python3-pip
+    python: python3 python3-pip
+    java: java-17-openjdk
+    node: nodejs npm
 
 yay:
   install: yay -S --noconfirm
   remove: yay -R --noconfirm
   update: yay -Syu --noconfirm
   packages:
-    python3: python3 python-pip
+    python: python3 python-pip
+    java: jdk-openjdk
     nextcloud: nextcloud-client
     vscode: visual-studio-code-bin
     github: github-desktop-bin
@@ -51,7 +56,15 @@ pacman:
   remove: sudo pacman -R --noconfirm
   update: sudo pacman -Syu --noconfirm
   packages:
-    python3: python3 python-pip
+    python: python3 python-pip
+    node: nodejs npm
+    java: jdk-openjdk
     nextcloud: nextcloud-client
 
+# not yet implemented
+npm:
+ sass: sass
+ typescript: typescript
 
+
+system_manager: brew
