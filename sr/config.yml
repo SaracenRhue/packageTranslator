@@ -4,6 +4,7 @@ managers:
   - dnf
   - yay
   - pacman
+  - scoop
 
 apt-get:
   install: sudo apt install -y
@@ -11,7 +12,7 @@ apt-get:
   update: sudo apt update -y && sudo apt upgrade -y
   packages:
     python: python3 python3-pip
-    node: nodejs npm
+    nodejs: nodejs npm
     java: penjdk-17-jdk
     nextcloud: nextcloud-desktop
     firefox: firefox-esr
@@ -22,7 +23,7 @@ brew:
   update: brew update && brew upgrade
   packages:
     java: openjdk
-    node: nodejs npm
+    nodejs: nodejs npm
     firefox: --cask firefox
     brave: --cask brave-browser
     vscode: --cask visual-studio-code
@@ -38,7 +39,7 @@ dnf:
   packages:
     python: python3 python3-pip
     java: java-17-openjdk
-    node: nodejs npm
+    nodejs: nodejs npm
 
 yay:
   install: yay -S --noconfirm
@@ -57,14 +58,24 @@ pacman:
   update: sudo pacman -Syu --noconfirm
   packages:
     python: python3 python-pip
-    node: nodejs npm
+    nodejs: nodejs npm
     java: jdk-openjdk
     nextcloud: nextcloud-client
 
-# not yet implemented
+scoop:
+  install: scoop install
+  remove: scoop uninstall
+  update: scoop update
+  packages:
+    python: python310
+    java: jdk
+
+
 npm:
  sass: sass
  typescript: typescript
+ angular: '@angular/cli'
 
 
 system_manager: brew
+

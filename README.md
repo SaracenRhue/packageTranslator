@@ -1,5 +1,10 @@
 # packageTranslator
 
+## Dependencies
+
+Python 3.9 or higher
+pyyaml
+
 ## Installation
 
 ```bash
